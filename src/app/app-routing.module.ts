@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { ProtectedPageComponent } from './components/protected-page/protected-page.component';
+
+const routes: Routes = [
+  {path: 'home', component: HomePageComponent},
+  {path: 'protected', component: ProtectedPageComponent},
+  {path: '**', pathMatch: 'full', redirectTo:'home'},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
