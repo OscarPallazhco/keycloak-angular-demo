@@ -62,3 +62,6 @@ Admin page. only for users with roles user and admin
 
 Google login option
 ![google option](./pictures/google_option.png)  
+
+user role for default
+![default user role](./pictures/user_role_default.png)  
