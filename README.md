@@ -2,8 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
-
-This demo was created to test how keycloak works.
+This demo was created to test how keycloak works.  
+We created a demo using angular and the package keycloak-angular, here we have:
++ a login button that redirect to keycloak login
++ a public route (http://localhost:4200/home ) available to any user
++ a private route only for users with role “user” (http://localhost:4200/protected )
++ a private route only for users that have roles “user” and “admin” (http://localhost:4200/admin )
 ## Previous steps:
     1. bring up the keycloak server
     2. configure keycloak
