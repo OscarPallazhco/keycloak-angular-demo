@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { KeycloakService } from 'keycloak-angular';
+import { KeycloakProfile } from 'keycloak-js';
 
 @Component({
   selector: 'app-protected-page',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./protected-page.component.css']
 })
 export class ProtectedPageComponent implements OnInit {
+  public isLoggedIn = false;
+  public roles : string[] = [];
+  public userProfile: KeycloakProfile | null = null;
 
-  constructor() { }
+  constructor(private readonly keycloak: KeycloakService) {}
 
-  ngOnInit(): void {
+  public async ngOnInit() {
+    this.isLoggedIn = await this.keycloak.isLoggedIn();
+    if (this.isLoggedIn) {
+      this.userProfile = await this.keycloak.loadUserProfile();
+      this.roles = this.keycloak.getUserRoles();
+    }
   }
+
 
 }

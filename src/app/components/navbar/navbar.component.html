@@ -9,15 +9,18 @@
             <li class="nav-item" routerLinkActive='active'>
                 <a class="nav-link" routerLink='/home'>Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item" routerLinkActive='active'>
+            <li *ngIf="authorizate(['user'])" class="nav-item" routerLinkActive='active'>
                 <a class="nav-link" routerLink='/protected'>Protected</a>
             </li>
-            <li class="nav-item" routerLinkActive='active'>
+            <li *ngIf="authorizate(['admin'])" class="nav-item" routerLinkActive='active'>
                 <a class="nav-link" routerLink='/admin'>Admin</a>
             </li>
         </ul>
-        <button class="btn btn-outline-primary">
+        <button *ngIf="!isLoggedIn" class="btn btn-outline-primary" (click)="login()">
             Login
+        </button>
+        <button *ngIf="isLoggedIn" class="btn btn-outline-danger" (click)="logout()">
+            Logout
         </button>
     </div>
 </nav>
