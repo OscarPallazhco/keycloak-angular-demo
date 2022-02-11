@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProtectedPageComponent } from './components/protected-page/protected-page.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NavbarComponent,
-    ProtectedPageComponent
+    ProtectedPageComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
