@@ -15,7 +15,7 @@ export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://192.168.49.2:30103/auth',
+        url: 'http://localhost:8080/auth',
         realm: 'quickstart',
         clientId: 'keycloak-angular-demo'
       },
